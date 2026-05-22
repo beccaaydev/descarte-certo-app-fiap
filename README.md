@@ -172,7 +172,7 @@ Projeto desenvolvido em grupo para a disciplina de Microsserviços com Spring.
 Desenvolvido por:
 
 * [Rebeca Ayres](https://github.com/beccaaydev?utm_source=chatgpt.com) - @beccaaydev
-* [Elise Oliveira](https://github.com/euelise?utm_source=chatgpt.com) - @eueelise
+* [Elise Oliveira](https://github.com/euelisee?utm_source=chatgpt.com) - @eueelisee
 * [Laís Sallas](https://github.com/laissallas?utm_source=chatgpt.com) - @laissallas
 * [Gabrielli Martinelli](https://github.com/Gabrielli-Martinelli?utm_source=chatgpt.com) - @Gabrielli-Martinelli
 
