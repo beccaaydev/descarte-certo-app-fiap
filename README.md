@@ -1,103 +1,189 @@
-# Descarte Certo - Infraestrutura e Banco de Dados
+# 🌱 Descarte Certo — API RESTful com Spring Boot
 
-Projeto Spring Boot com infraestrutura completa para gerenciar banco de dados Oracle da aplicação Descarte Certo, que gerencia ações de reciclagem e descarte correto de materiais através de uma plataforma de ecopontos.
+Sistema desenvolvido para incentivar o descarte correto de resíduos e promover ações sustentáveis através de uma plataforma de ecopontos.
+Este projeto foi desenvolvido em grupo para a disciplina de Microsserviços com Spring, utilizando boas práticas de desenvolvimento backend, arquitetura RESTful, segurança e integração com banco de dados Oracle.
 
-**Este repositório contém apenas a infraestrutura de banco de dados e configuração. A implementação das APIs será feita separadamente.**
+---
 
-## Tecnologias Utilizadas
+## 📌 Sobre o Projeto
 
-- **Java 17**
-- **Spring Boot 3.5.14**
-- **Oracle Database 11g/XE**
-- **Flyway** (Database Migrations)
-- **Docker & Docker Compose**
-- **Maven**
+O **Descarte Certo** é uma solução voltada para ESG (*Environmental, Social and Governance*), criada com o objetivo de facilitar o gerenciamento de descarte de materiais recicláveis por meio de ecopontos e agendamentos.
 
-## Estrutura do Projeto
+A aplicação foi construída utilizando o ecossistema Spring, desde a configuração inicial até recursos mais avançados de validação, tratamento de exceções e segurança da API.
 
+---
+
+## 🚀 Funcionalidades
+
+✔️ API RESTful estruturada com Spring Boot
+✔️ Endpoints para gerenciamento da aplicação
+✔️ Integração com banco de dados Oracle
+✔️ Versionamento do banco com Flyway
+✔️ Validação de dados com Bean Validation
+✔️ Tratamento global de exceções
+✔️ Arquitetura baseada em microsserviços
+✔️ Segurança de endpoints com Spring Security
+✔️ Persistência de dados com Spring Data JPA
+✔️ Containerização com Docker
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+### Backend
+
+* Java 17
+* Spring Boot 3
+* Spring Web
+* Spring Data JPA
+* Spring Security
+* Bean Validation
+* Flyway
+
+### Banco de Dados
+
+* Oracle Database
+
+### DevOps & Ferramentas
+
+* Docker
+* Docker Compose
+* Maven
+
+---
+
+## 📂 Estrutura do Projeto
+
+```bash
+src
+ ┣ main
+ ┃ ┣ java
+ ┃ ┃ ┗ br/com/descartecerto
+ ┃ ┣ resources
+ ┃ ┃ ┣ application.properties
+ ┃ ┃ ┗ db/migration
+ ┣ test
 ```
-descarte-certo-app-java/
-├── src/
-│   ├── main/
-│   │   └── resources/
-│   │       ├── application.properties
-│   │       └── db/migration/          # Scripts Flyway
-│   │           ├── V2__Create_Usuarios_Table.sql
-│   │           ├── V3__Create_Materiais_Table.sql
-│   │           ├── V4__Create_Ecopontos_Table.sql
-│   │           ├── V5__Create_Agendamentos_Table.sql
-│   │           └── V6__Insert_Initial_Data.sql
-├── Dockerfile
-├── docker-compose.yml
-├── pom.xml
-└── .gitignore
-```
 
-## Executando com Docker (RECOMENDADO)
+---
+
+## 🔐 Segurança
+
+A aplicação utiliza o **Spring Security** para proteger endpoints e garantir controle de acesso adequado.
+
+Entre os conceitos aplicados:
+
+* autenticação
+* autorização
+* proteção de rotas
+* tratamento de acessos indevidos
+* boas práticas de segurança para APIs REST
+
+---
+
+## 🧩 Conceitos Aplicados
+
+Este projeto teve foco acadêmico e prático no desenvolvimento de APIs modernas utilizando o ecossistema Spring.
+
+### Alguns conceitos trabalhados:
+
+* arquitetura RESTful
+* microsserviços
+* injeção de dependência
+* DTOs
+* validações
+* tratamento de exceções
+* versionamento de banco
+* segurança de APIs
+* persistência de dados
+* integração com Oracle
+* containerização
+
+---
+
+## ▶️ Como Executar o Projeto
 
 ### Pré-requisitos
-- Docker e Docker Compose instalados
 
-### Passos para executar
+* Java 17+
+* Maven
+* Docker e Docker Compose
+* Oracle Database
 
-1. **Clone o repositório**
+---
+
+### Clone o repositório
+
 ```bash
-git clone <repository-url>
-cd descarte-certo-app-java
+git clone https://github.com/beccaaydev/descarte-certo-app-fiap.git
 ```
 
-2. **Build da imagem e start dos containers**
 ```bash
-docker-compose up --build
+cd descarte-certo-app-fiap
 ```
 
-O primeiro startup pode levar alguns minutos pois o banco de dados Oracle precisa ser inicializado e as migrations Flyway serão executadas automaticamente.
+---
 
-O banco de dados estará disponível em:
-- **Host**: `localhost`
-- **Porta**: `1521`
-- **SID**: `ORCL`
-- **Usuário**: `system`
-- **Senha**: `oracle`
+### Executar com Docker
 
-### Verificar logs
 ```bash
-docker-compose logs -f
+docker compose up --build
 ```
 
-### Parar containers
+---
+
+### Executar localmente
+
 ```bash
-docker-compose down
+mvn clean install
 ```
 
-### Remover volumes (limpar dados)
 ```bash
-docker-compose down -v
+mvn spring-boot:run
 ```
 
-## Executando localmente (sem Docker)
+---
 
-### Pré-requisitos
-- JDK 17+
-- Maven 3.9+
-- Oracle Database 11g/XE instalado localmente ou acesso ao servidor Oracle da FIAP
+## 🗄️ Banco de Dados
 
-### Passos
+A aplicação utiliza Oracle Database integrado ao Spring Data JPA.
 
-1. **Clonar repositório**
-```bash
-git clone <repository-url>
-cd descarte-certo-app-java
-```
+As migrations são gerenciadas utilizando o Flyway.
 
-2. **Configurar credenciais do banco** (em `src/main/resources/application.properties`)
-```properties
-spring.datasource.url=jdbc:oracle:thin:@//seu-servidor:1521/seu-banco
-spring.datasource.username=seu-usuario
-spring.datasource.password=sua-senha
-```
+---
 
-3. **Build da aplicação (migrations serão executadas automaticamente)**
-```bash
-mvn clean compile
-```
+## 📖 Endpoints REST
+
+A API possui endpoints RESTful desenvolvidos para gerenciamento das funcionalidades do sistema.
+
+Exemplos:
+
+* gerenciamento de usuários
+* materiais recicláveis
+* ecopontos
+* agendamentos
+
+---
+
+## 👩‍💻 Equipe
+
+Projeto desenvolvido em grupo para a disciplina de Microsserviços com Spring.
+
+Desenvolvido por:
+
+* [Rebeca Ayres](https://github.com/beccaaydev?utm_source=chatgpt.com) - @beccaaydev
+* [Elise Oliveira](https://github.com/euelise?utm_source=chatgpt.com) - @eueelise
+* [Laís Sallas](https://github.com/laissallas?utm_source=chatgpt.com) - @laissallas
+* [Gabrielli Martinelli](https://github.com/Gabrielli-Martinelli?utm_source=chatgpt.com) - @Gabrielli-Martinelli
+
+---
+
+## 🌍 Objetivo ESG
+
+O projeto foi criado com foco em conscientização ambiental e incentivo ao descarte sustentável de resíduos, contribuindo para práticas alinhadas aos princípios ESG.
+
+---
+
+## 📄 Licença
+
+Este projeto possui fins acadêmicos e educacionais.
