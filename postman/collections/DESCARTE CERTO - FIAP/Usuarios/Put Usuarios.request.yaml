@@ -1,0 +1,19 @@
+$kind: http-request
+url: http://localhost:8081/usuarios/5
+method: PUT
+body:
+  type: json
+  content: "{\r
+
+    \    \"nome\": \"Rosemary Lutz\",\r
+
+    \    \"email\": \"rosemary@gmail.com\",\r
+
+    \    \"senha\": \"senha789\",\r
+
+    \    \"totalKgReciclado\": 32.85,\r
+
+    \    \"totalCo2Evitado\": 60.20\r
+
+    }"
+order: 5000

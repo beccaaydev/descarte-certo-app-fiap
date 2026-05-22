@@ -1,0 +1,14 @@
+$kind: http-request
+name: Post Ecopontos
+url: http://localhost:8081/ecopontos
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"name\": \"Iphone 14\",\r
+
+    \    \"value\": 8000.00\r
+
+    }"
+order: 1000

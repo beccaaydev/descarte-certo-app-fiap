@@ -1,0 +1,8 @@
+$kind: http-request
+name: Put Agendamentos
+url: http://localhost:8081/agendamentos/4
+method: PUT
+body:
+  type: json
+  content: '{ "status": "CONFIRMADO" }'
+order: 4000

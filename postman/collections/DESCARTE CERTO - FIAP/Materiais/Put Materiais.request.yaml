@@ -1,0 +1,21 @@
+$kind: http-request
+url: http://localhost:8081/materiais/5
+method: PUT
+body:
+  type: json
+  content: "{\r
+
+    \  \"nome\": \"Óleo de Cozinha Usado\",\r
+
+    \  \"categoria\": \"Gorduras/Óleos\",\r
+
+    \  \"riscoAmbiental\": \"Elevado risco de contaminação química de águas e solos se descartado no lixo comum.\",\r
+
+    \  \"comoDescartar\": \"Levar obrigatoriamente a um ecoponto que receba resíduos perigosos.\",\r
+
+    \  \"isPerigoso\": 1,\r
+
+    \  \"isReciclavel\": 0\r
+
+    }"
+order: 4000

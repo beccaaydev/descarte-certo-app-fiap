@@ -1,0 +1,13 @@
+# Use this workspace to collaborate
+workspace:
+  id: 6cf302d4-1185-47f6-89c2-c096f11fa8db
+
+localResources:
+  collections:
+    - ..\DESCARTE CERTO - FIAP.postman_collection.json
+
+# Each entry here maps a local resource to one or more corresponding objects in Postman Cloud
+
+cloudResources:
+  collections:
+    ..\postman\collections\DESCARTE CERTO - FIAP: ee745c1b-26fa-45d6-b306-ade970417195

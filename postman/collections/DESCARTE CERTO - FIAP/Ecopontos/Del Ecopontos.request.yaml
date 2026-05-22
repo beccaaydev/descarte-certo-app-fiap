@@ -1,0 +1,5 @@
+$kind: http-request
+name: Del Ecopontos
+url: http://localhost:8081/ecopontos/{id}
+method: DELETE
+order: 5000

@@ -1,0 +1,19 @@
+$kind: http-request
+url: http://localhost:8081/usuarios
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"nome\": \"Rosemary Oliveira\",\r
+
+    \    \"email\": \"rosemary@example.com\",\r
+
+    \    \"senha\": \"senha789\",\r
+
+    \    \"totalKgReciclado\": 32.80,\r
+
+    \    \"totalCo2Evitado\": 60.20\r
+
+    }"
+order: 1000

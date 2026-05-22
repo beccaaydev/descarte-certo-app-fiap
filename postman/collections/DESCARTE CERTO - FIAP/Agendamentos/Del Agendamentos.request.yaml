@@ -1,0 +1,5 @@
+$kind: http-request
+name: Del Agendamentos
+url: http://localhost:8081/agendamentos/4
+method: DELETE
+order: 5000
